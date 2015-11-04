@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(chome.Startup))]
-namespace chome
+[assembly: OwinStartupAttribute(typeof(CHome.Startup))]
+namespace CHome
 {
     public partial class Startup
     {

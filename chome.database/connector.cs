@@ -7,13 +7,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Configuration;
 
-namespace Chome.Database
+namespace CHome.Database
 {
-    public class Connector
+    public class Connector : IDisposable
     {
         private SqlConnection _sqlConnection = null;
 
-        public Connector()
+        internal Connector()
         {
             try
             {
@@ -26,7 +26,7 @@ namespace Chome.Database
             }
         }
 
-        public void Open()
+        internal void Open()
         {
             try
             {
@@ -45,7 +45,7 @@ namespace Chome.Database
             }
         }
 
-        public void Close()
+        internal void Close()
         {
             try
             {
@@ -82,6 +82,21 @@ namespace Chome.Database
             {
                 throw;
             }
+        }
+
+        internal SqlCommand SqlCommandText(string sqlStatement)
+        {
+            try
+            {
+                SqlCommand sqlCommand = new SqlCommand(sqlStatement, _sqlConnection);
+                sqlCommand.CommandType = System.Data.CommandType.Text;
+                return sqlCommand;
+            }
+            catch
+            {
+                throw;
+            }
+
         }
 
     }

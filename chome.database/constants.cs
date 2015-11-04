@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Chome.Database
+namespace CHome.Database
 {
     internal class Constants
     {

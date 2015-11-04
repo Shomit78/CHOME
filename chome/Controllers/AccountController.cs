@@ -8,9 +8,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using chome.Models;
+using CHome.Models;
 
-namespace chome.Controllers
+namespace CHome.Controllers
 {
     [Authorize]
     public class AccountController : Controller
